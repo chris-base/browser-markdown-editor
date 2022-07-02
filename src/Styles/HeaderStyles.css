@@ -1,0 +1,103 @@
+#mainHeaderContainer {
+  display: flex;
+  background-color: grey;
+  color: white;
+  align-items: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#headerTitleTextContainer {
+}
+
+#headerTitleText {
+  letter-spacing: 2px;
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0 15px;
+}
+
+#headerVerticalDivider {
+  height: 50px;
+  width: 1px;
+  background-color: white;
+}
+
+#headerSplitContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#headerCurrFileContainer {
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+}
+
+#currFileImg {
+  width: 25px;
+  height: 25px;
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: invert(100%) sepia(0%) saturate(7477%) hue-rotate(64deg) brightness(97%) contrast(107%);
+  margin-right: 10px;
+}
+
+#currFileInfoContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+#currFileTitleText {
+  color: #333333;
+  margin-bottom: 3px;
+  font-size: 15px;
+}
+
+#currFileNameText {
+  margin-top: 3px;
+  font-size: 15px;
+}
+
+#headerEndContainer {
+  display: flex;
+  align-items: center;
+}
+
+#trashIcon {
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: invert(100%) sepia(0%) saturate(7477%) hue-rotate(64deg) brightness(97%) contrast(107%);
+  margin-right: 5px;
+}
+
+#saveChangesButton {
+  background-color: orange;
+  border-radius: 5px;
+  margin: 0 15px;
+  padding: 7px 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+#saveChangeImg {
+  width: 25px;
+  height: 25px;
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: invert(100%) sepia(0%) saturate(7477%) hue-rotate(64deg) brightness(97%) contrast(107%);
+  margin-right: 10px;
+}
+
+#saveChangesText {
+}
