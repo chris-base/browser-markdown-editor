@@ -3,6 +3,7 @@
   background-color: grey;
   color: white;
   align-items: center;
+  margin-bottom: 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -44,12 +45,13 @@
   background-repeat: no-repeat;
   background-position: center;
   filter: invert(100%) sepia(0%) saturate(7477%) hue-rotate(64deg) brightness(97%) contrast(107%);
-  margin-right: 10px;
+  margin-right: 15px;
 }
 
 #currFileInfoContainer {
   display: flex;
   flex-direction: column;
+  text-align: left;
 }
 
 #currFileTitleText {

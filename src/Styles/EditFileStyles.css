@@ -1,0 +1,24 @@
+#editFileContainer {
+  width: 50%;
+  height: 100%;
+  background-color: hotpink;
+}
+
+#editFileHeader {
+  background-color: darkgrey;
+  /* height: 20px; */
+  display: flex;
+  align-items: center;
+  padding: 15px 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#editFileHeaderText {
+  margin: 0;
+  color: white;
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-size: 15px;
+}
