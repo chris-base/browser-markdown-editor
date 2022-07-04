@@ -22,3 +22,8 @@
   font-weight: 500;
   font-size: 15px;
 }
+
+#editFileTextArea {
+  width: 98%;
+  height: 95%;
+}
