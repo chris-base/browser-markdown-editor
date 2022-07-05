@@ -2,9 +2,8 @@ import "../Styles/HeaderStyles.css";
 import currFileIcon from "./assets/currFileIcon.png";
 import saveIcon from "./assets/saveIcon.png";
 import trashIcon from "./assets/trashIcon.png";
-import uploadFileIcon from "./assets/uploadFileIcon.png";
 
-const HeaderComponent = () => {
+const HeaderComponent = ({ setUploadFileVisible }) => {
   return (
     <div id='mainHeaderContainer'>
       <div id='headerTitleTextContainer'>
@@ -15,7 +14,7 @@ const HeaderComponent = () => {
 
       <div id='headerSplitContainer'>
         <div id='headerCurrFileContainer'>
-          <div id='currFileImg' style={{ backgroundImage: "url(" + currFileIcon + ")" }}></div>
+          <div id='currFileImg' style={{ backgroundImage: "url(" + currFileIcon + ")" }} onClick={() => setUploadFileVisible(true)}></div>
           <div id='currFileInfoContainer'>
             <p id='currFileTitleText'>Document Name</p>
             <p id='currFileNameText'>Current_file_name.md</p>

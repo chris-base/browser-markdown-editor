@@ -1,4 +1,4 @@
-#uploadFileContainer {
+#uploadFileComponent {
   position: fixed;
   z-index: 2;
   top: 0;
@@ -6,4 +6,49 @@
   bottom: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#uploadFileContainer {
+  width: 350px;
+  height: 100px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#uploadFileTitleText {
+  margin-right: 5px;
+  font-size: 17px;
+}
+
+#uploadFileButton {
+  cursor: pointer;
+  background-color: cyan;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  margin-left: 5px;
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#uploadFileImg {
+  width: 25px;
+  height: 25px;
+  background-size: 25px;
+  background-repeat: no-repeat;
+  margin-right: 5px;
+}
+
+#uploadFileText {
+  margin: 0;
+  font-size: 17px;
 }

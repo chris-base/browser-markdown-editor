@@ -5,11 +5,13 @@ import EditFileComponent from "./Components/EditFileComponent";
 import UploadFileComponent from "./Components/UploadFileComponent";
 
 function App() {
+  const [uploadFileVisible, setUploadFileVisible] = useState(false);
+
   return (
     <div className='App'>
-      <UploadFileComponent />
+      {uploadFileVisible ? <UploadFileComponent uploadFileVisible={uploadFileVisible} setUploadFileVisible={setUploadFileVisible} /> : <></>}
 
-      <HeaderComponent />
+      <HeaderComponent setUploadFileVisible={setUploadFileVisible} />
 
       <div id='editFilePreviewContainer'>
         <EditFileComponent />
