@@ -3,7 +3,7 @@ import currFileIcon from "./assets/currFileIcon.png";
 import saveIcon from "./assets/saveIcon.png";
 import trashIcon from "./assets/trashIcon.png";
 
-const HeaderComponent = ({ setUploadFileVisible }) => {
+const HeaderComponent = ({ setUploadFileVisible, uploadButtonRef }) => {
   return (
     <div id='mainHeaderContainer'>
       <div id='headerTitleTextContainer'>
@@ -14,7 +14,12 @@ const HeaderComponent = ({ setUploadFileVisible }) => {
 
       <div id='headerSplitContainer'>
         <div id='headerCurrFileContainer'>
-          <div id='currFileImg' style={{ backgroundImage: "url(" + currFileIcon + ")" }} onClick={() => setUploadFileVisible(true)}></div>
+          <div
+            id='currFileImg'
+            style={{ backgroundImage: "url(" + currFileIcon + ")" }}
+            onClick={() => setUploadFileVisible(true)}
+            ref={uploadButtonRef}
+          ></div>
           <div id='currFileInfoContainer'>
             <p id='currFileTitleText'>Document Name</p>
             <p id='currFileNameText'>Current_file_name.md</p>

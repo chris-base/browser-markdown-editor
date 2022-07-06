@@ -1,8 +1,8 @@
-import { useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import "../Styles/UploadFileStyles.css";
-import uploadFileIcon from "./assets/uploadFileIcon.png";
 
-const UploadFileComponent = ({ uploadFileVisible, setUploadFileVisible }) => {
+const UploadFileComponent = ({ setUploadFileVisible, uploadButtonRef }) => {
+  const [isMD, setIsMD] = useState(false);
   const wrapperRef = useRef(null);
 
   useEffect(() => {
@@ -13,19 +13,29 @@ const UploadFileComponent = ({ uploadFileVisible, setUploadFileVisible }) => {
   }, []);
 
   const handleClickOutside = (event) => {
-    if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+    if (wrapperRef.current && !wrapperRef.current.contains(event.target) && !uploadButtonRef.current.contains(event.target)) {
       setUploadFileVisible(false);
+    }
+  };
+
+  const handleOnChangeFile = (file) => {
+    if (file.target.files[0].type === "text/markdown") {
+      setIsMD(true);
     }
   };
 
   return (
     <div id='uploadFileComponent'>
       <div id='uploadFileContainer' ref={wrapperRef}>
-        <p id='uploadFileTitleText'>Upload file (.md files only)</p>
-        <div id='uploadFileButton'>
-          <div id='uploadFileImg' style={{ backgroundImage: "url(" + uploadFileIcon + ")" }}></div>
-          <p id='uploadFileText'>Upload</p>
-        </div>
+        {isMD ? (
+          <div className='loading-spinner'></div>
+        ) : (
+          <div>
+            <p id='uploadFileTitleText'>Upload file (.md files only)</p>
+
+            <input type='file' id='uploadFileButton' onChange={handleOnChangeFile}></input>
+          </div>
+        )}
       </div>
     </div>
   );
