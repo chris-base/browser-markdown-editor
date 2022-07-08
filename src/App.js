@@ -3,6 +3,7 @@ import "./App.css";
 import HeaderComponent from "./Components/HeaderComponent";
 import EditFileComponent from "./Components/EditFileComponent";
 import UploadFileComponent from "./Components/UploadFileComponent";
+import FilePreviewComponent from "./Components/FilePreviewComponent";
 
 function App() {
   const [uploadFileVisible, setUploadFileVisible] = useState(false);
@@ -15,8 +16,14 @@ function App() {
 
       <HeaderComponent setUploadFileVisible={setUploadFileVisible} uploadButtonRef={uploadButtonRef} />
 
-      <div id='editFilePreviewContainer'>
-        <EditFileComponent />
+      <div id='editPreviewContainer'>
+        <div id='editFilePreviewContainer'>
+          <EditFileComponent />
+        </div>
+
+        <div id='filePreviewContainer'>
+          <FilePreviewComponent />
+        </div>
       </div>
     </div>
   );
