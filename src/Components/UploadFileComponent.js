@@ -1,8 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import "../Styles/UploadFileStyles.css";
 
-const UploadFileComponent = ({ setUploadFileVisible, uploadButtonRef }) => {
+const UploadFileComponent = ({ setUploadFileVisible, uploadButtonRef, setCurrFile }) => {
   const [isMD, setIsMD] = useState(false);
+
   const wrapperRef = useRef(null);
 
   useEffect(() => {
@@ -18,8 +19,24 @@ const UploadFileComponent = ({ setUploadFileVisible, uploadButtonRef }) => {
     }
   };
 
-  const handleOnChangeFile = (file) => {
-    if (file.target.files[0].type === "text/markdown") {
+  const handleOnChangeFile = (e) => {
+    const file = e.target.files[0];
+    console.log(file);
+
+    if (file.type === "text/markdown") {
+      let reader = new FileReader();
+
+      reader.readAsText(file);
+
+      reader.onload = function () {
+        console.log(reader.result);
+        setCurrFile(reader.result);
+      };
+
+      reader.onerror = function () {
+        console.log(reader.error);
+      };
+
       setIsMD(true);
     }
   };
@@ -33,7 +50,7 @@ const UploadFileComponent = ({ setUploadFileVisible, uploadButtonRef }) => {
           <div>
             <p id='uploadFileTitleText'>Upload file (.md files only)</p>
 
-            <input type='file' id='uploadFileButton' onChange={handleOnChangeFile}></input>
+            <input type='file' id='uploadFileButton' accept='.md' onChange={handleOnChangeFile}></input>
           </div>
         )}
       </div>
