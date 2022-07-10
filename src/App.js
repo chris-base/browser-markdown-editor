@@ -25,11 +25,11 @@ function App() {
 
       <div id='editPreviewContainer'>
         <div id='editFilePreviewContainer'>
-          <EditFileComponent />
+          <EditFileComponent currFile={currFile} />
         </div>
 
         <div id='filePreviewContainer'>
-          <FilePreviewComponent />
+          <FilePreviewComponent currFile={currFile} />
         </div>
       </div>
     </div>
