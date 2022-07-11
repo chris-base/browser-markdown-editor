@@ -7,9 +7,10 @@ import FilePreviewComponent from "./Components/FilePreviewComponent";
 
 function App() {
   const [uploadFileVisible, setUploadFileVisible] = useState(false);
-  const [currFile, setCurrFile] = useState(localStorage.getItem("currFile"));
+  const [currFile, setCurrFile] = useState([localStorage.getItem("currFileName"), localStorage.getItem("currFile")]);
 
-  localStorage.setItem("currFile", currFile);
+  localStorage.setItem("currFile", currFile[1]);
+  localStorage.setItem("currFileName", currFile[0]);
 
   const uploadButtonRef = useRef(null);
 
@@ -21,15 +22,15 @@ function App() {
         <></>
       )}
 
-      <HeaderComponent setUploadFileVisible={setUploadFileVisible} uploadButtonRef={uploadButtonRef} currFile={currFile} />
+      <HeaderComponent setUploadFileVisible={setUploadFileVisible} uploadButtonRef={uploadButtonRef} currFile={currFile[0]} />
 
       <div id='editPreviewContainer'>
         <div id='editFilePreviewContainer'>
-          <EditFileComponent currFile={currFile} />
+          <EditFileComponent currFile={currFile[1]} />
         </div>
 
         <div id='filePreviewContainer'>
-          <FilePreviewComponent currFile={currFile} />
+          <FilePreviewComponent currFile={currFile[1]} />
         </div>
       </div>
     </div>

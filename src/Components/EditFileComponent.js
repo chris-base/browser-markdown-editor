@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../Styles/EditFileStyles.css";
 
 const EditFileComponent = ({ currFile }) => {
   const [editFileText, setEditFileText] = useState(currFile);
+
+  useEffect(() => {
+    setEditFileText(currFile);
+  }, [currFile]);
 
   return (
     <div id='editFileContainer'>

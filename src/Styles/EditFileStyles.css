@@ -1,10 +1,12 @@
 #editFileContainer {
   width: 100%;
   height: 100%;
+  margin-bottom: 0;
+  background-color: #202324;
 }
 
 #editFileHeader {
-  background-color: darkgrey;
+  background-color: #2a2d2e;
   /* height: 20px; */
   display: flex;
   align-items: center;
@@ -26,11 +28,13 @@
   width: 98%;
   height: 95%;
   resize: none;
-  line-height: 1.5;
+  line-height: 2;
   margin: 0;
   outline: none;
   border: none;
-  padding: 10px;
+  padding: 10px 10px 30px 10px;
+  color: white;
+  background-color: transparent;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;

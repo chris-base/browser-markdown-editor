@@ -22,7 +22,7 @@ const HeaderComponent = ({ setUploadFileVisible, uploadButtonRef, currFile }) =>
           ></div>
           <div id='currFileInfoContainer'>
             <p id='currFileTitleText'>Document Name</p>
-            <p id='currFileNameText'>{currFile ? currFile[0] : "No File Uploaded"}</p>
+            <p id='currFileNameText'>{currFile ? currFile : "No File Uploaded"}</p>
           </div>
         </div>
 

@@ -21,7 +21,6 @@ const UploadFileComponent = ({ setUploadFileVisible, uploadButtonRef, setCurrFil
 
   const handleOnChangeFile = (e) => {
     const file = e.target.files[0];
-    console.log(file);
 
     if (file.type === "text/markdown") {
       let reader = new FileReader();
@@ -29,8 +28,7 @@ const UploadFileComponent = ({ setUploadFileVisible, uploadButtonRef, setCurrFil
       reader.readAsText(file);
 
       reader.onload = function () {
-        console.log(reader.result);
-        setCurrFile(reader.result);
+        setCurrFile([file.name, reader.result]);
       };
 
       reader.onerror = function () {

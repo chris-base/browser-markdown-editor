@@ -1,6 +1,6 @@
 #mainHeaderContainer {
   display: flex;
-  background-color: grey;
+  background-color: #3f4647;
   color: white;
   align-items: center;
   margin-bottom: 0;
@@ -56,7 +56,7 @@
 }
 
 #currFileTitleText {
-  color: #333333;
+  color: #acadad;
   margin-bottom: 3px;
   font-size: 15px;
 }
