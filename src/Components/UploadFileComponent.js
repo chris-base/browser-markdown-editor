@@ -36,6 +36,10 @@ const UploadFileComponent = ({ setUploadFileVisible, uploadButtonRef, setCurrFil
       };
 
       setIsMD(true);
+
+      setTimeout(() => {
+        setUploadFileVisible(false);
+      }, 500);
     }
   };
 

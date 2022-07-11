@@ -9,7 +9,7 @@ const FilePreviewComponent = ({ currFile }) => {
       </div>
 
       <div id='markdownContainer'>
-        <Markdown>{currFile}</Markdown>
+        <Markdown>{currFile !== "null" ? currFile : ""}</Markdown>
       </div>
     </div>
   );
