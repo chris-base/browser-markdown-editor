@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "../Styles/EditFileStyles.css";
 
-const EditFileComponent = ({ currFile }) => {
+const EditFileComponent = ({ fileName, currFile, setCurrFile }) => {
   const [editFileText, setEditFileText] = useState(currFile);
 
   useEffect(() => {
@@ -16,7 +16,10 @@ const EditFileComponent = ({ currFile }) => {
       <textarea
         id='editFileTextArea'
         type='text'
-        onChange={(e) => setEditFileText(e.target.value)}
+        onChange={(e) => {
+          setEditFileText(e.target.value);
+          setCurrFile([fileName, e.target.value]);
+        }}
         input={editFileText}
         value={editFileText !== "null" ? editFileText : ""}
       />

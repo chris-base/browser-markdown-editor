@@ -26,7 +26,7 @@ function App() {
 
       <div id='editPreviewContainer'>
         <div id='editFilePreviewContainer'>
-          <EditFileComponent currFile={currFile[1]} />
+          <EditFileComponent fileName={currFile[0]} currFile={currFile[1]} setCurrFile={setCurrFile} />
         </div>
 
         <div id='filePreviewContainer'>

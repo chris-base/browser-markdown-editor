@@ -2,6 +2,7 @@ import "../Styles/HeaderStyles.css";
 import currFileIcon from "./assets/currFileIcon.png";
 import saveIcon from "./assets/saveIcon.png";
 import trashIcon from "./assets/trashIcon.png";
+import fileUploadIcon from "./assets/fileUploadIcon.png";
 
 const HeaderComponent = ({ setUploadFileVisible, uploadButtonRef, currFile }) => {
   return (
@@ -29,8 +30,8 @@ const HeaderComponent = ({ setUploadFileVisible, uploadButtonRef, currFile }) =>
         <div id='headerEndContainer'>
           <div id='trashIcon' style={{ backgroundImage: "url(" + trashIcon + ")" }}></div>
           <div id='saveChangesButton'>
-            <div id='saveChangeImg' style={{ backgroundImage: "url(" + saveIcon + ")" }}></div>
-            <div id='saveChangesText'>Save Changes</div>
+            <div id='saveChangeImg' style={{ backgroundImage: "url(" + currFile === "null" ? fileUploadIcon : saveIcon + ")" }}></div>
+            <div id='saveChangesText'>{currFile === "null" ? "Upload File" : "Save Changes"}</div>
           </div>
         </div>
       </div>
