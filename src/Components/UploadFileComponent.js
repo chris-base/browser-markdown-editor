@@ -14,7 +14,12 @@ const UploadFileComponent = ({ setUploadFileVisible, uploadButtonRef, setCurrFil
   }, []);
 
   const handleClickOutside = (event) => {
-    if (wrapperRef.current && !wrapperRef.current.contains(event.target) && !uploadButtonRef.current.contains(event.target)) {
+    if (
+      wrapperRef.current &&
+      !wrapperRef.current.contains(event.target) &&
+      !uploadButtonRef[0].current.contains(event.target) &&
+      !uploadButtonRef[1].current.contains(event.target)
+    ) {
       setUploadFileVisible(false);
     }
   };
@@ -39,7 +44,7 @@ const UploadFileComponent = ({ setUploadFileVisible, uploadButtonRef, setCurrFil
 
       setTimeout(() => {
         setUploadFileVisible(false);
-      }, 500);
+      }, 50);
     }
   };
 

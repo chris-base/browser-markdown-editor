@@ -1,0 +1,60 @@
+#trashFileComponent {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#trashFileContainer {
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#trashFileTitleText {
+  font-size: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+  white-space: nowrap;
+}
+
+#trashFileButtonsContainer {
+  display: flex;
+}
+
+.trashFileButtonClass {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 15px;
+  margin: 0 10px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#trashFileButton {
+  background-color: #3a5dde;
+  color: white;
+}
+
+#trashFileCancelButton {
+  background-color: #ff1717;
+  color: white;
+}
