@@ -10,6 +10,7 @@ function App() {
   const [uploadFileVisible, setUploadFileVisible] = useState(false);
   const [trashFileVisible, setTrashFileVisible] = useState(false);
   const [currFile, setCurrFile] = useState([localStorage.getItem("currFileName"), localStorage.getItem("currFile")]);
+  const [fileStatus, setFileState] = useState(0);
 
   localStorage.setItem("currFile", currFile[1]);
   localStorage.setItem("currFileName", currFile[0]);
@@ -37,11 +38,19 @@ function App() {
         setTrashFileVisible={setTrashFileVisible}
         trashCanRef={trashCanRef}
         currFile={currFile[0]}
+        fileStatus={fileStatus}
+        setFileState={setFileState}
       />
 
       <div id='editPreviewContainer'>
         <div id='editFilePreviewContainer'>
-          <EditFileComponent fileName={currFile[0]} currFile={currFile[1]} setCurrFile={setCurrFile} />
+          <EditFileComponent
+            fileName={currFile[0]}
+            currFile={currFile[1]}
+            setCurrFile={setCurrFile}
+            fileStatus={fileStatus}
+            setFileState={setFileState}
+          />
         </div>
 
         <div id='filePreviewContainer'>

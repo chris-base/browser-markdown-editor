@@ -1,10 +1,22 @@
+import { useState } from "react";
 import "../Styles/HeaderStyles.css";
 import currFileIcon from "./assets/currFileIcon.png";
 import saveIcon from "./assets/saveIcon.png";
 import trashIcon from "./assets/trashIcon.png";
 import fileUploadIcon from "./assets/fileUploadIcon.png";
+import fileDownloadIcon from "./assets/fileDownloadIcon.png";
 
-const HeaderComponent = ({ setUploadFileVisible, uploadButtonRef, setTrashFileVisible, trashCanRef, currFile }) => {
+const HeaderComponent = ({ setUploadFileVisible, uploadButtonRef, setTrashFileVisible, trashCanRef, currFile, fileStatus, setFileState }) => {
+  const saveFile = () => {
+    localStorage.setItem("currFile", currFile[1]);
+    localStorage.setItem("currFileName", currFile[0]);
+    setFileState(1);
+  };
+
+  const downloadFile = () => {
+    setFileState(0);
+  };
+
   return (
     <div id='mainHeaderContainer'>
       <div id='headerTitleTextContainer'>
@@ -39,13 +51,22 @@ const HeaderComponent = ({ setUploadFileVisible, uploadButtonRef, setTrashFileVi
           <div
             id='saveChangesButton'
             ref={uploadButtonRef[1]}
-            style={currFile === "null" ? { backgroundColor: "#00bd3c" } : { backgroundColor: "#ff9317" }}
+            style={
+              currFile === "null"
+                ? { backgroundColor: "#00bd3c" }
+                : fileStatus === 0
+                ? { backgroundColor: "#ff9317" }
+                : { backgroundColor: "#3434eb" }
+            }
             onClick={() => {
-              currFile === "null" ? setUploadFileVisible(true) : console.log("kppk");
+              currFile === "null" ? setUploadFileVisible(true) : fileStatus === 0 ? saveFile() : downloadFile();
             }}
           >
-            <div id='saveChangeImg' style={{ backgroundImage: "url(" + (currFile === "null" ? fileUploadIcon : saveIcon) + ")" }}></div>
-            <div id='saveChangesText'>{currFile === "null" ? "Upload File" : "Save Changes"}</div>
+            <div
+              id='saveChangeImg'
+              style={{ backgroundImage: "url(" + (currFile === "null" ? fileUploadIcon : fileStatus === 0 ? saveIcon : fileDownloadIcon) + ")" }}
+            ></div>
+            <div id='saveChangesText'>{currFile === "null" ? "Upload File" : fileStatus === 0 ? "Save Changes" : "Download File"}</div>
           </div>
         </div>
       </div>

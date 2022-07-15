@@ -96,6 +96,10 @@
   cursor: pointer;
 }
 
+#saveChangesButton:hover {
+  opacity: 0.6;
+}
+
 #saveChangeImg {
   width: 25px;
   height: 25px;
