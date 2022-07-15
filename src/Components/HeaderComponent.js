@@ -15,6 +15,7 @@ const HeaderComponent = ({ setUploadFileVisible, uploadButtonRef, setTrashFileVi
 
   const downloadFile = () => {
     setFileState(0);
+    console.log("kadk");
   };
 
   return (
@@ -35,7 +36,7 @@ const HeaderComponent = ({ setUploadFileVisible, uploadButtonRef, setTrashFileVi
           ></div>
           <div id='currFileInfoContainer'>
             <p id='currFileTitleText'>Document Name</p>
-            <p id='currFileNameText'>{currFile !== "null" ? currFile : "No File Uploaded"}</p>
+            <p id='currFileNameText'>{currFile[0]}</p>
           </div>
         </div>
 
@@ -52,21 +53,21 @@ const HeaderComponent = ({ setUploadFileVisible, uploadButtonRef, setTrashFileVi
             id='saveChangesButton'
             ref={uploadButtonRef[1]}
             style={
-              currFile === "null"
+              currFile[1] === "null"
                 ? { backgroundColor: "#00bd3c" }
                 : fileStatus === 0
                 ? { backgroundColor: "#ff9317" }
                 : { backgroundColor: "#3434eb" }
             }
             onClick={() => {
-              currFile === "null" ? setUploadFileVisible(true) : fileStatus === 0 ? saveFile() : downloadFile();
+              currFile[1] === "null" ? setUploadFileVisible(true) : fileStatus === 0 ? saveFile() : downloadFile();
             }}
           >
             <div
               id='saveChangeImg'
-              style={{ backgroundImage: "url(" + (currFile === "null" ? fileUploadIcon : fileStatus === 0 ? saveIcon : fileDownloadIcon) + ")" }}
+              style={{ backgroundImage: "url(" + (currFile[1] === "null" ? fileUploadIcon : fileStatus === 0 ? saveIcon : fileDownloadIcon) + ")" }}
             ></div>
-            <div id='saveChangesText'>{currFile === "null" ? "Upload File" : fileStatus === 0 ? "Save Changes" : "Download File"}</div>
+            <div id='saveChangesText'>{currFile[1] === "null" ? "Upload File" : fileStatus === 0 ? "Save Changes" : "Download File"}</div>
           </div>
         </div>
       </div>

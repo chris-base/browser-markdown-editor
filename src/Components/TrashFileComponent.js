@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import "../Styles/TrashFileStyles.css";
 
-const TrashFileComponent = ({ setTrashFileVisible, trashCanRef, setCurrFile }) => {
+const TrashFileComponent = ({ setTrashFileVisible, trashCanRef, setCurrFile, setFileState }) => {
   const wrapperRef = useRef(null);
 
   useEffect(() => {
@@ -26,8 +26,9 @@ const TrashFileComponent = ({ setTrashFileVisible, trashCanRef, setCurrFile }) =
             className='trashFileButtonClass'
             id='trashFileButton'
             onClick={() => {
-              setCurrFile(["null", "null"]);
+              setCurrFile(["untitled.md", "null"]);
               setTrashFileVisible(false);
+              setFileState(1);
             }}
           >
             Discard

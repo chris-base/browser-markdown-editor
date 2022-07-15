@@ -9,7 +9,10 @@ import FilePreviewComponent from "./Components/FilePreviewComponent";
 function App() {
   const [uploadFileVisible, setUploadFileVisible] = useState(false);
   const [trashFileVisible, setTrashFileVisible] = useState(false);
-  const [currFile, setCurrFile] = useState([localStorage.getItem("currFileName"), localStorage.getItem("currFile")]);
+  const [currFile, setCurrFile] = useState([
+    localStorage.getItem("currFileName") === "null" ? "untitled.md" : localStorage.getItem("currFile"),
+    localStorage.getItem("currFile"),
+  ]);
   const [fileStatus, setFileState] = useState(0);
 
   localStorage.setItem("currFile", currFile[1]);
@@ -27,7 +30,12 @@ function App() {
       )}
 
       {trashFileVisible ? (
-        <TrashFileComponent setTrashFileVisible={setTrashFileVisible} trashCanRef={trashCanRef} setCurrFile={setCurrFile} />
+        <TrashFileComponent
+          setTrashFileVisible={setTrashFileVisible}
+          trashCanRef={trashCanRef}
+          setCurrFile={setCurrFile}
+          setFileState={setFileState}
+        />
       ) : (
         <></>
       )}
@@ -37,7 +45,7 @@ function App() {
         uploadButtonRef={uploadButtonRef}
         setTrashFileVisible={setTrashFileVisible}
         trashCanRef={trashCanRef}
-        currFile={currFile[0]}
+        currFile={currFile}
         fileStatus={fileStatus}
         setFileState={setFileState}
       />
