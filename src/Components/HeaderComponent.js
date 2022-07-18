@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "../Styles/HeaderStyles.css";
 import currFileIcon from "./assets/currFileIcon.png";
 import saveIcon from "./assets/saveIcon.png";
@@ -15,7 +14,14 @@ const HeaderComponent = ({ setUploadFileVisible, uploadButtonRef, setTrashFileVi
 
   const downloadFile = () => {
     setFileState(0);
-    console.log("kadk");
+    const element = document.createElement("a");
+    const file = new Blob([currFile[1]], {
+      type: "text/plain",
+    });
+    element.href = URL.createObjectURL(file);
+    element.download = currFile[0];
+    document.body.appendChild(element);
+    element.click();
   };
 
   return (
