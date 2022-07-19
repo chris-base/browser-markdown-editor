@@ -7,7 +7,6 @@
 
 #editFileHeader {
   background-color: #2a2d2e;
-  /* height: 20px; */
   display: flex;
   align-items: center;
   padding: 15px 10px;
@@ -19,7 +18,7 @@
 #editFileHeaderText {
   margin: 0;
   color: white;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   font-weight: 500;
   font-size: 15px;
 }

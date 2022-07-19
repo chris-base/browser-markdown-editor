@@ -10,7 +10,7 @@ function App() {
   const [uploadFileVisible, setUploadFileVisible] = useState(false);
   const [trashFileVisible, setTrashFileVisible] = useState(false);
   const [currFile, setCurrFile] = useState([
-    localStorage.getItem("currFileName") === "null" ? "untitled.md" : localStorage.getItem("currFile"),
+    localStorage.getItem("currFileName") === "null" ? "untitled.md" : localStorage.getItem("currFileName"),
     localStorage.getItem("currFile"),
   ]);
   const [fileStatus, setFileState] = useState(0);
