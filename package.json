@@ -1,5 +1,6 @@
 {
   "name": "browser-markdown-editor",
+  "homepage": "https://chris-base.github.io/browser-markdown-editor/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -36,6 +37,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^4.0.0",
     "react-markdown": "^8.0.3"
   }
 }

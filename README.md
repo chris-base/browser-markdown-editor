@@ -9,4 +9,5 @@ This is a solution to the [In-browser markdown editor challenge on Frontend Ment
 ## Links
 
 Live Site - [Live Site](https://chris-base.github.io/browser-markdown-editor/)
+
 GitHub - [Chris base](https://github.com/chris-base)
